@@ -47,7 +47,6 @@ sk-editme .model-content::after {
   width: 100%;
   height: 100%;
   z-index: -1;
-  -webkit-transition: all .3s ease-out;
   transition: all .3s ease-out;
 }
 sk-editme .model-content.edit-active {
@@ -83,7 +82,6 @@ sk-editme sk-editme-icon::after {
   width: 100%;
   height: 100%;
   z-index: -1;
-  -webkit-transition: all .3s ease-out;
   transition: all .3s ease-out;
 }
 sk-editme sk-editme-icon.edit-active::after {
@@ -110,7 +108,6 @@ sk-editme sk-editme-icon svg {
   margin-top: -0.45em;
   margin-left: -0.4em;
   opacity: 0;
-  -webkit-transition: all .3s ease-out;
   transition: all .3s ease-out;
 }
 sk-editme sk-editme-icon.edit-active svg {

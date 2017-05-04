@@ -1,6 +1,6 @@
 'use strict';
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 (function (root, factory) {
   // AMD
@@ -38,11 +38,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         onInvalid: '&?',
         onChange: '&?'
       },
-      controller: function controller($scope) {
+      controller: ['$scope', function ($scope) {
         $scope.toggleEdit = function (value) {
           $scope.isEditing = value !== undefined ? value : !$scope.isEditing;
         };
-      },
+      }],
       link: link,
       transclude: true,
       template: '\n        <div ng-click="toggleEdit(true)" ng-class="{\'editme-touch\': isTouchEnabled}">\n          <span ng-hide="isEditing" class="model-wrapper" ng-class="{\'hide-icon\': hideIcon}">\n            <span class="model-content" ng-class="{\'edit-active\': showEditHint}">{{model}}</span>\n            <sk-editme-icon ng-class="{\'edit-active\': showEditHint}" ng-if="!isEditing && !hideIcon"></sk-editme-icon>\n          </span>\n          <content ng-show="isEditing"></content>\n        </div>\n      '
